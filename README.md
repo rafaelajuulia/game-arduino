@@ -45,5 +45,5 @@ Comer as maçãs (LEDs que aparecem em posições aleatórias) para crescer sem 
 - [Rafaela Júlia]
 - [Rayanne Marília]
 - [Eshiley Letícia]
-- [Davi Lucas]
+- [Davy Lucas]
 - [Jean Witor]
