@@ -14,3 +14,35 @@ struct Apple{
   int rPos; 
   int cPos; 
 };
+
+
+const int DIN = 12;
+const int CS = 11;
+const int CLK = 10;
+LedControl lc = LedControl(DIN, CLK, CS, 1);
+
+byte pic[8] = {0,0,0,0,0,0,0,0}; 
+
+Snake snake = {{1,5},{{0,5}, {1,5}}, 2, {1,0}}; 
+Apple apple = {0, 0};                          
+
+int lastDir[2] = {1, 0};
+
+float oldTime = 0;
+float timer = 0;
+float updateRate = 3;
+
+int i, j; 
+
+
+
+
+
+
+
+
+
+
+
+
+
