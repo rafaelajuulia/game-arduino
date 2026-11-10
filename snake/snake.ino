@@ -8,3 +8,9 @@ struct Snake{
   int len;        
   int dir[2];      
 };
+
+typedef struct Apple Apple;
+struct Apple{
+  int rPos; 
+  int cPos; 
+};
