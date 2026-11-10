@@ -48,15 +48,16 @@ void setup() {
   apple.rPos = random(0, 8);
   apple.cPos = random(0, 8);
 }
+float calculateDeltaTime() {
+ float currentTime = millis();
+ float dt = currentTime - oldTime;
+ oldTime = currentTime;
+ return dt;
 
+}
+void reset() {
+ for (int j = 0; j < 8; j++) {
+     pic[j] = 0;
 
-
-
-
-
-
-
-
-
-
-
+ }
+}
