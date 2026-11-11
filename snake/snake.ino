@@ -34,6 +34,20 @@ float updateRate = 3;
 
 int i, j; 
 
+void setup() {
+  Serial.begin(9600);
+
+  lc.shutdown(0, false);
+  
+  lc.setIntensity(0, 8);
+ 
+  lc.clearDisplay(0);
+
+ 
+  randomSeed(analogRead(A0));
+  apple.rPos = random(0, 8);
+  apple.cPos = random(0, 8);
+}
 
 
 
