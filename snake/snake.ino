@@ -84,4 +84,19 @@ void Update() {
   } else if (newHead[1] == -1) {
     newHead[1] = 7;
   }
+
+  // Check If The Snake hits itself
+  for (j = 0; j < snake.len; j++) {
+    if (snake.body[j][0] == newHead[0] && snake.body[j][1] == newHead[1]) {
+      // Pause the game for 1 sec then Reset it
+      delay(1000);
+      snake = { { 1, 5 }, { { 0, 5 }, { 1, 5 } }, 2, { 1, 0 } }; // Reinitialize the snake object
+
+      lastDir[0] = 1;
+      lastDir[1] = 0;
+      apple.rPos = random(0, 8);
+      apple.cPos = random(0, 8);
+      return;
+    }
+  }
 }
