@@ -60,6 +60,13 @@ void reset() {
   }
 }
 
+void removeFirst() {
+  for (j = 1; j < snak.len ; j++) {
+    snake, body[j-1][0] = snake.body [j][0];
+    snakw, body[j-1][1] = snake.body [j][1];
+  }
+}
+
 void Update() {
   // Reset (Clear) the 8x8 LED matrix
   reset();
@@ -99,4 +106,28 @@ void Update() {
       return;
     }
   }
+
+  //Check if The snake ate the apple
+  bool comeu = (newHead[0] == apple.rPos && newHead[1] == apple.cPos);
+
+  // Limite de 40 para não estourar o vetor body[40]
+  if (comeu && snake.len < 40) {
+    snake.len = snake.len + 1;
+  } else {
+    removeFirst();
+  }
+
+  if (comeu) {
+    apple.rPos = random(0, 8);
+    apple.cPos = random(0, 8);
+  }
+
+  snake.body[snake.len - 1][0] = newHead[0];
+  snake.body[snake.len - 1][1] = newHead[1];
+
+  snake.head[0] = newHead[0];
+  snake.head[1] = newHead[1];
+
+  }
 }
+
