@@ -61,9 +61,9 @@ void reset() {
 }
 
 void removeFirst() {
-  for (j = 1; j < snak.len ; j++) {
-    snake, body[j-1][0] = snake.body [j][0];
-    snakw, body[j-1][1] = snake.body [j][1];
+  for (j = 1; j < snake.len ; j++) {
+    snake.body[j-1][0] = snake.body [j][0];
+    snake.body[j-1][1] = snake.body [j][1];
   }
 }
 
@@ -127,6 +127,19 @@ void Update() {
 
   snake.head[0] = newHead[0];
   snake.head[1] = newHead[1];
+
+  //Update the pic Array to Display(snake and apple)
+for (j = 0; j < snake.len; j++) {
+  pic[snake.body[j][0]] |= 128 >> snake.body[j][1];
+}
+
+pic[apple.rPos] |= 128 >> apple.cPos;
+
+}
+
+void Render() {
+  for (i = 0; i < 8; i++) {
+    lc.setRow(0, i, pic[i]);
 
   }
 }
